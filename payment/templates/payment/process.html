@@ -1,0 +1,108 @@
+{% extends "store/base.html" %}
+{% load widget_tweaks %}
+
+{% block content%}
+{% comment %} <div class="container mt-3">
+    <h1>Payment {{ payment.id }}</h1>
+    <ul class="object-tools">
+        <li>
+            <a href="#" onclick="window.print();">
+                Print payment
+            </a>
+        </li>
+    </ul>
+    <table class="table">
+        <tr>
+            <th>Created</th>
+            <td>{{ payment.created }}</td>
+        </tr>
+        <tr>
+            <th>Customer</th>
+            <td>{{ payment.first_name }} {{ payment.last_name }}</td>
+        </tr>
+        <tr>
+            <th>E-mail</th>
+            <td><a href="mailto:{{ payment.email }}">{{ payment.email }}</a></td>
+        </tr>
+        <tr>
+            <th>City</th>
+            <td>
+                {{ payment.city }}
+            </td>
+        </tr>
+        <tr>
+            <th>Total amount</th>
+            <td>${{ payment.get_amount }}</td>
+        </tr>
+        <tr>
+            <th>Status</th>
+            <td>{% if payment.paid %}Paid{% else %}Pending payment{% endif %}</td>
+        </tr>
+        <tr>
+            <th>Paystack payment</th>
+            <td>
+                {% if payment.paystack_ref %}
+                    ##################
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+    <form action="{% url "process" %}" method="post">
+        {% csrf_token %}
+        <input type="submit" class="btn btn-primary mt-2" value="Pay now">
+    </form>
+</div> {% endcomment %}
+
+<div class="bg-white overflow-hidden shadow rounded-lg border">
+    <div class="px-8 py-5 sm:px-6">
+        <h3 class="text-lg leading-6 font-medium text-gray-900">
+            Payment {{ payment.id }}
+        </h3>
+        {% comment %} <p class="mt-1 max-w-2xl text-sm text-gray-500">
+            This is some information about the user.
+        </p> {% endcomment %}
+    </div>
+    <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
+        <dl class="sm:divide-y sm:divide-gray-200">
+            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">
+                    Full name
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    {{payment.user}}
+                </dd>
+            </div>
+            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">
+                    Email address
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    {{payment.email}}
+                </dd>
+            </div>
+            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">
+                    Total Amount
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    {{payment.get_amount}}
+                </dd>
+            </div>
+            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">
+                    Address
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    {{payment.shipping_address}}
+                </dd>
+            </div>
+        </dl>
+    </div>
+    <form action="{% url "process" %}" method="post">
+        {% csrf_token %}
+        <input type="submit" class="m-6 inline-block bg-lime-400 hover:bg-lime-700 text-black font-bold py-2 px-4 rounded" value="Pay Now">
+    </form>
+</div>
+
+
+{% endblock %}
