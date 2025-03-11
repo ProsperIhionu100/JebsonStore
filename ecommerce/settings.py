@@ -121,7 +121,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': os.environ.get('DB_PASSWORD_YO'),
+        'PASSWORD': os.environ['DB_PASSWORD_YO'],
         'HOST': 'crossover.proxy.rlwy.net',  # Ensure this is correct
         'PORT': '45818',
     }
@@ -188,8 +188,8 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
 EMAIL_USE_TLS = 'True'
 EMAIL_HOST_USER = 'prosperbiz720@gmail.com'
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
 
-PAYSTACK_TEST_SECRETE_KEY = os.environ.get('PAYSTACK_TEST_SECRETE_KEY')
-PAYSTACK_TEST_PUBLIC_KEY = os.environ.get('PAYSTACK_TEST_PUBLIC_KEY')
+PAYSTACK_TEST_SECRETE_KEY = os.environ['PAYSTACK_TEST_SECRETE_KEY']
+PAYSTACK_TEST_PUBLIC_KEY = os.environ['PAYSTACK_TEST_PUBLIC_KEY']
 PAYSTACK_INITIALIZE_PAYMENT_URL = 'https://api.paystack.co/transaction/initialize'
