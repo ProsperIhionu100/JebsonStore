@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["python38", "postgresql_16"]
+
+[phases.build]
+cmds = ["pip install -r requirements.txt"]
+
+[start]
+cmd = "gunicorn studybud.wsgi --bind 0.0.0.0:$PORT"
