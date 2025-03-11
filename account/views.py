@@ -278,11 +278,12 @@ def manage_shipping(request):
 
 @login_required(login_url='my-login')
 def track_orders(request):
+    page= "order"
     
     try:
         order =OrderItem.objects.filter(user=request.user)
         
-        context = {"order": order}
+        context = {"order": order, "page":page}
         
         return render(request, 'account/dashboard.html', context)
         
