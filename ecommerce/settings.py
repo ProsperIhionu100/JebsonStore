@@ -34,7 +34,7 @@ SECRET_KEY = 'django-insecure-cvewhd7p@d-#n3)2y_d@5ak4se*ys8y8fv9#e&wd%s962f6q6$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ 'https://jebson.ng','jebsonstore-production.up.railway.app', 'https://jebsonstore-production.up.railway.app']
+ALLOWED_HOSTS = [ 'https://jebson.ng','jebson.ng','jebsonstore-production.up.railway.app', 'https://jebsonstore-production.up.railway.app']
 CSRF_TRUSTED_ORIGINS = ['https://jebson.ng','https://jebsonstore-production.up.railway.app']
 
 
