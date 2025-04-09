@@ -187,7 +187,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
 EMAIL_USE_TLS = 'True'
-EMAIL_HOST_USER = 'prosperbiz720@gmail.com'
+EMAIL_HOST_USER = 'echezonaprosper100@gmail.com'
 EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
 
 PAYSTACK_TEST_SECRETE_KEY = os.environ['PAYSTACK_TEST_SECRETE_KEY']
