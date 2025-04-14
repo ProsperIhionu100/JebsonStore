@@ -170,7 +170,7 @@ def payment_process(request):
         # Paystack checkout session data
         session_data = {
             'email': payment.email,
-            'amount': int(amount),
+            'amount': int(amount) * 100,
             'callback_url': success_url,
             'metadata': metadata
             }
